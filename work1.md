@@ -65,3 +65,5 @@ mysql> show databases;
 +--------------------+
 8 rows in set (0.00 sec)
 ```
+![](https://github.com/CNXUXIN/database/blob/master/work1.1.png?raw=true)
+![](https://github.com/CNXUXIN/database/blob/master/work1.2.png?raw=true)
