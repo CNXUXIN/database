@@ -34,6 +34,7 @@ mysql> show create table t_dept;
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.00 sec)
 ```
+![](https://github.com/CNXUXIN/database/blob/master/work2.1.png?raw=true)
 # delete the table
 ```sql
 mysql> drop table t_dept;
@@ -94,7 +95,7 @@ mysql> desc t_dept;
 +-------------+-------------+------+-----+---------+-------+
 5 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/work2.2.png?raw=true)
 # from VARCHAR back to INT
 ```sql
 mysql> ALTER TABLE t_dept
@@ -152,7 +153,7 @@ mysql> desc t_dept3;
 +--------+-------------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/work2.3.png?raw=true)
 # PRIMARY KEY constraint
 ```sql
 mysql> create table t_dept4(
@@ -192,7 +193,7 @@ mysql> desc t_dept5;
 +--------+-------------+------+-----+---------+----------------+
 3 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/work2.4.png?raw=true)
 # INSERT a record to both tables
 ```sql
 mysql> CREATE TABLE t_dept_2(
@@ -235,7 +236,7 @@ mysql> select * from t_dept_2;
 +--------+-----------+-------------+
 2 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/work2.5.png?raw=true)
 # Insert records
 ```sql
 mysql> INSERT INTO t_dept (dname, loc) VALUES ("myName_1", "Hangzhou_1");
@@ -257,4 +258,4 @@ mysql> select * from t_dept;
 +-------------+--------+----------+------------+----------+
 6 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/work2.6.png?raw=true)
