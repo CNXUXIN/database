@@ -1,4 +1,4 @@
-```
+```sql
 mysql> drop database databasetest;
 Query OK, 3 rows affected (0.10 sec)
 
