@@ -1,3 +1,4 @@
+## 作业2：输出我，我的老板，我的老板的老板
 ```sql
 mysql> DROP TABLE IF EXISTS t_employee2;CREATE TABLE t_employee2 (    deptno INT NOT NULL,empno INT PRIMARY KEY,ename VARCHAR(20),job VARCHAR(20),    MGR INT,Hiredate Date,sal float,comm float);
 Query OK, 0 rows affected (0.07 sec)
