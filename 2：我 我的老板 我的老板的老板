@@ -74,5 +74,5 @@ mysql> select t1.ename My_name,t2.ename My_b_name ,t3.ename My_b_b_name
 +---------+-----------+-------------+
 8 rows in set (0.00 sec)
 ```
-![]()
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/pictures/work2.2.1.png?raw=true)
+![](https://github.com/CNXUXIN/database/blob/master/pictures/work2.2.2.png?raw=true)
