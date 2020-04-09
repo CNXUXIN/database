@@ -1,4 +1,5 @@
-## 第一个query
+## 作业3：2个query用join写
+#### 第一个query
 ```sql
 mysql> select t1.deptno,t1.empno,t1.ename,t1.job,t1.MGR,t1.Hiredate,t1.sal,t1.comm
     ->         from t_employee2 t1 inner join t_employee2 t2
@@ -61,7 +62,7 @@ mysql> select * from t_employee2 WHERE sal > (
 +--------+-------+--------+-----------+------+------------+------+------+
 12 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/pictures/work3.1.png?raw=true)
 
 ## 第二个query
 ```sql
@@ -104,4 +105,4 @@ mysql> select * from t_employee2;
 +--------+-------+--------+-----------+------+------------+------+------+
 13 rows in set (0.00 sec)
 ```
-![]()
+![](https://github.com/CNXUXIN/database/blob/master/pictures/work3.2.png?raw=true)
