@@ -1,0 +1,108 @@
+## 创建存储过程
+```sql
+mysql>     SELECT * FROM t_employee2;
++--------+-------+--------+-----------+------+------------+------+------+
+| deptno | empno | ename  | job       | MGR  | Hiredate   | sal  | comm |
++--------+-------+--------+-----------+------+------------+------+------+
+|     20 |  7369 | SMITH  | CLERK     | 7902 | 1981-03-12 |  800 | NULL |
+|     30 |  7499 | ALLEN  | SALESMAN  | 7698 | 1982-03-12 | 1600 |  300 |
+|     30 |  7521 | WARD   | SALESMAN  | 7698 | 1838-03-12 | 1250 |  500 |
+|     20 |  7566 | JONES  | MANAGER   | 7839 | 1981-03-12 | 2975 | NULL |
+|     30 |  7654 | MARTIN | SALESMAN  | 7698 | 1981-01-12 | 1250 | 1400 |
+|     10 |  7698 | BLAKE  | MANAGER   | 7839 | 1985-03-12 | 2450 | NULL |
+|     20 |  7788 | SCOTT  | ANALYST   | 7566 | 1981-03-12 | 3000 | NULL |
+|     10 |  7839 | KING   | PRESIDENT | NULL | 1981-03-12 | 5000 | NULL |
+|     30 |  7844 | TURNER | SALESMAN  | 7689 | 1981-03-12 | 1500 |    0 |
+|     20 |  7878 | ADAMS  | CLERK     | 7788 | 1981-03-12 | 1100 | NULL |
+|     30 |  7900 | JAMES  | CLERK     | 7698 | 1981-03-12 |  950 | NULL |
+|     20 |  7902 | FORD   | ANALYST   | 7566 | 1981-03-12 | 3000 | NULL |
+|     10 |  7934 | MILLER | CLERK     | 7782 | 1981-03-12 | 1300 | NULL |
++--------+-------+--------+-----------+------+------------+------+------+
+13 rows in set (0.00 sec)
+
+mysql>     DELIMITER $$
+mysql>     CREATE PROCEDURE proce_employee_sal1 ()
+    ->     BEGIN
+    ->         SELECT sal
+    ->       FROM t_employee2;
+    ->     END$$
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>     DELIMITER ;
+mysql>
+mysql>     CALL proce_employee_sal1();
++------+
+| sal  |
++------+
+|  800 |
+| 1600 |
+| 1250 |
+| 2975 |
+| 1250 |
+| 2450 |
+| 3000 |
+| 5000 |
+| 1500 |
+| 1100 |
+|  950 |
+| 3000 |
+| 1300 |
++------+
+13 rows in set (0.01 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+```
+![]()
+
+
+## 创建函数
+```sql
+mysql>     SELECT * FROM t_employee2;
++--------+-------+--------+-----------+------+------------+------+------+
+| deptno | empno | ename  | job       | MGR  | Hiredate   | sal  | comm |
++--------+-------+--------+-----------+------+------------+------+------+
+|     20 |  7369 | SMITH  | CLERK     | 7902 | 1981-03-12 |  800 | NULL |
+|     30 |  7499 | ALLEN  | SALESMAN  | 7698 | 1982-03-12 | 1600 |  300 |
+|     30 |  7521 | WARD   | SALESMAN  | 7698 | 1838-03-12 | 1250 |  500 |
+|     20 |  7566 | JONES  | MANAGER   | 7839 | 1981-03-12 | 2975 | NULL |
+|     30 |  7654 | MARTIN | SALESMAN  | 7698 | 1981-01-12 | 1250 | 1400 |
+|     10 |  7698 | BLAKE  | MANAGER   | 7839 | 1985-03-12 | 2450 | NULL |
+|     20 |  7788 | SCOTT  | ANALYST   | 7566 | 1981-03-12 | 3000 | NULL |
+|     10 |  7839 | KING   | PRESIDENT | NULL | 1981-03-12 | 5000 | NULL |
+|     30 |  7844 | TURNER | SALESMAN  | 7689 | 1981-03-12 | 1500 |    0 |
+|     20 |  7878 | ADAMS  | CLERK     | 7788 | 1981-03-12 | 1100 | NULL |
+|     30 |  7900 | JAMES  | CLERK     | 7698 | 1981-03-12 |  950 | NULL |
+|     20 |  7902 | FORD   | ANALYST   | 7566 | 1981-03-12 | 3000 | NULL |
+|     10 |  7934 | MILLER | CLERK     | 7782 | 1981-03-12 | 1300 | NULL |
++--------+-------+--------+-----------+------+------------+------+------+
+13 rows in set (0.00 sec)
+
+mysql>     DELIMITER $$
+mysql>     CREATE FUNCTION func_employee_sal (empno INT)
+    ->         RETURNS DOUBLE
+    ->     BEGIN
+    ->         RETURN (SELECT sal
+    ->             FROM t_employee2
+    ->             WHERE t_employee2.empno = empno);
+    ->     END$$
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>     DELIMITER ;
+mysql>
+mysql>     SELECT func_employee_sal(7369);
++-------------------------+
+| func_employee_sal(7369) |
++-------------------------+
+|                     800 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql>     SELECT func_employee_sal(7934);
++-------------------------+
+| func_employee_sal(7934) |
++-------------------------+
+|                    1300 |
++-------------------------+
+1 row in set (0.00 sec)
+```
+![]()
